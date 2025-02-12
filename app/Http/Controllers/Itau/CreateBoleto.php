@@ -18,9 +18,12 @@ class CreateBoleto extends Controller
     public function create(Request $request)
     {
         // Agora você pode usar o método create da classe CreateToken
-        $response = $this->createToken->create($request); 
+        $token = $this->createToken->create($request); 
+       // Retorne a resposta ou faça o que for necessário
+        return $token;
 
-        // Retorne a resposta ou faça o que for necessário
-        return $response;
+
+
+        
     }
 }

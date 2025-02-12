@@ -34,12 +34,15 @@ class CreateToken extends Controller
 
         // Verifica se o token ainda é válido, comparando a data do token com o tempo atual
         if ($parametros->token && strtotime($parametros->data_token) > time()) {
-            return response()->json([
-                'codigo' => 200,
-                'data_token' => $parametros->data_token,
-                'token' => $parametros->token,
-                'origem' => 'Banco de Dados' // Indica que o token vem do banco de dados
-            ]);
+          
+           return  $parametros->token;
+          
+            // return response()->json([
+            //     'codigo' => 200,
+            //     'data_token' => $parametros->data_token,
+            //     'token' => $parametros->token,
+            //     'origem' => 'Banco de Dados' // Indica que o token vem do banco de dados
+            // ]);
         }
 
         // Gera novos UUIDs necessários para a requisição
@@ -54,7 +57,7 @@ class CreateToken extends Controller
         // Configurações da requisição cURL
         curl_setopt_array($curl, [
             CURLOPT_URL => $parametros->url1, // URL da API de autenticação do Itau
-            CURLOPT_SSLCERTTYPE => 'P12', // Tipo do certificado
+         CURLOPT_SSLCERTTYPE => 'P12', // Tipo do certificado
             CURLOPT_SSLCERT => $certificadoPath, // Caminho do certificado
             CURLOPT_SSLCERTPASSWD => $parametros->senha, // Senha do certificado
             CURLOPT_RETURNTRANSFER => true, // Retorna a resposta como string
@@ -90,7 +93,7 @@ class CreateToken extends Controller
             'token' => $data->access_token,
             'data_token' => now()->addSeconds($expires_in), // Data de expiração
         ]);
-
+return $parametros->token;
         // Retorna a resposta com o novo token e a origem como "API Itau"
         return response()->json([
             'codigo' => 200,
