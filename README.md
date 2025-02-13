@@ -30,11 +30,11 @@ Esta API permite a comunicação com os serviços do Itaú para geração de bol
 - Banco de Dados MySQL
 
 ## Instalação
-
+ 
 1. Clone o repositório:
    ```sh
-   git clone https://github.com/seuusuario/seurepositorio.git
-   cd seurepositorio
+   git clone https://github.com/SALVADORBBA/BancoLaravel.git
+   cd BancoLaravel
    ```
 2. Instale as dependências:
    ```sh
