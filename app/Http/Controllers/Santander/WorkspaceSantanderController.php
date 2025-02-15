@@ -71,7 +71,7 @@ class WorkspaceSantanderController extends Controller
             return response()->json(['error' => 'Falha na comunicação com o Santander'], 500);
         }
 
-  $response = json_decode($response);
+        $response = json_decode($response);
 
         if (!isset($response->id)) {
             return response()->json(['error' => 'Resposta inválida do Santander', 'data' => $response], 500);
@@ -81,13 +81,13 @@ class WorkspaceSantanderController extends Controller
         $workspace->parametros_bancos_id = $parametros_bancos_id;
         $workspace->type = $response->type;
         $workspace->description = $response->description;
-      $workspace->covenant_code = $response->covenants[0]->code;
-   $workspace->bank_slip_billing_webhook_active = $response->bankSlipBillingWebhookActive  ;
-      $workspace->pix_billing_webhook_active = $response->pixBillingWebhookActive;
+        $workspace->covenant_code = $response->covenants[0]->code;
+        $workspace->bank_slip_billing_webhook_active = $response->bankSlipBillingWebhookActive;
+        $workspace->pix_billing_webhook_active = $response->pixBillingWebhookActive;
         $workspace->id_remoto = $response->id;
-     $workspace->webhookurl = $response->webhookURL;
+        $workspace->webhookurl = $response->webhookURL;
         $workspace->save();
-        
+
         return response()->json(['message' => 'Workspace criado com sucesso', 'data' => $workspace], 201);
     }
 }
