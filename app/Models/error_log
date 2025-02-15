@@ -1,0 +1,72 @@
+[13-Feb-2025 13:53:31 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ParametroBanco.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ParametroBanco.php on line 8
+[13-Feb-2025 13:53:32 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ParametroBanco.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ParametroBanco.php on line 8
+[13-Feb-2025 13:53:32 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Auth\User" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/User.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/User.php on line 11
+[13-Feb-2025 13:53:34 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Auth\User" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/User.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/User.php on line 11
+[13-Feb-2025 16:10:35 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ParametroBanco.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ParametroBanco.php on line 8
+[13-Feb-2025 16:10:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Auth\User" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/User.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/User.php on line 11
+[13-Feb-2025 19:31:34 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ContasReceber.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ContasReceber.php on line 7
+[13-Feb-2025 19:31:35 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ContasReceber.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ContasReceber.php on line 7
+[13-Feb-2025 19:31:36 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ParametroBanco.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ParametroBanco.php on line 8
+[13-Feb-2025 19:31:37 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ParametroBanco.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ParametroBanco.php on line 8
+[13-Feb-2025 19:31:37 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/Pessoa.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/Pessoa.php on line 8
+[13-Feb-2025 19:31:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/Pessoa.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/Pessoa.php on line 8
+[13-Feb-2025 19:31:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Auth\User" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/User.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/User.php on line 11
+[13-Feb-2025 19:31:40 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Auth\User" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/User.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/User.php on line 11
+[13-Feb-2025 20:26:45 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ContasReceber.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ContasReceber.php on line 7
+[13-Feb-2025 20:26:46 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ParametroBanco.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/ParametroBanco.php on line 8
+[13-Feb-2025 20:26:47 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Eloquent\Model" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/Pessoa.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/Pessoa.php on line 8
+[13-Feb-2025 20:26:47 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Auth\User" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/User.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Models/User.php on line 11

@@ -37,7 +37,20 @@ class ClassGenerica extends Controller
     {
         return preg_replace('/[^a-zA-Z0-9\s]/', '', $value);
     }
+  public static function TrataDoc($valor)
+  {
+    $antes = ['+', '.', '-', '/', '(', ')', ' '];
+    $depos = ['', '', '', '', '', '', ''];
+    return str_replace($antes, $depos, $valor);
+  }
+  
+  
+  
+  
+   
 
+  
+  
     public static function removerAcentosLetras($string)
     {
         $acentos = array(
