@@ -19,6 +19,9 @@ class WorkspaceSantanderController extends Controller
         $key = $request->input('key');
         $work_id = $request->input('work_id');
         $webhookURL = $request->input('webhookURL');
+        $bankSlipBillingWebhookActive = $request->input('bankSlipBillingWebhookActive');
+        $pixBillingWebhookActive= $request->input('pixBillingWebhookActive');
+        $description= $request->input('description');
         $code = $request->input('code');
 
         $parametros_bancos_id = $request->input('parametros_bancos_id');
@@ -52,9 +55,9 @@ class WorkspaceSantanderController extends Controller
             CURLOPT_POSTFIELDS => json_encode([
                 "type" => "BILLING",
                 "covenants" => [["code" =>    $code]],
-                "description" => "DeveloperAPI",
-                "bankSlipBillingWebhookActive" => true,
-                "pixBillingWebhookActive" => true,
+                "description" => $description,
+                "bankSlipBillingWebhookActive" =>  $bankSlipBillingWebhookActive,
+                "pixBillingWebhookActive" =>$pixBillingWebhookActive,
                 "webhookURL" =>   $webhookURL
             ]),
             CURLOPT_HTTPHEADER => [

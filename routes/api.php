@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Itau\TokenItauController;
 use App\Http\Controllers\ControleMeuNumeroController;
 use App\Http\Controllers\Itau\PrintBoletoNormal;
+use App\Http\Controllers\Santander\WorkspaceBusca;
 use App\Http\Controllers\Santander\WorkspaceSantanderController;
 use App\Http\Controllers\WebhookController;
 
@@ -41,3 +42,9 @@ Route::post('/Print', [PrintBoletoNormal::class, 'create']);
 
 /////////////santander/////////////////
 Route::post('/Workspace', [WorkspaceSantanderController::class, 'create']);
+
+Route::post('/BuscarAll', [WorkspaceBusca::class, 'index']);
+
+Route::post('/BuscarOne', [WorkspaceBusca::class, 'search']);
+
+Route::post('/Delete', [WorkspaceBusca::class, 'destroy']);
