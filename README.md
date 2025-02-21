@@ -1,27 +1,21 @@
-# API de Comunicação com o Itaú
+# API de Comunicação com Bancos
 
-Esta API permite a comunicação com os serviços do Itaú para geração de boletos bancários. Ela possui duas rotas principais:
+Esta API permite a comunicação com serviços bancários para a geração de boletos. Atualmente, estamos iniciando a implementação com os bancos **Itaú** e **Santander**, mas o sistema está preparado para a expansão futura para outros bancos.
+
+## Bancos Suportados
+- **Itaú** (implementado)
+- **Santander** (implementado)
+- Outros bancos (em breve)
 
 ## Rotas Disponíveis
 
-### 1. Geração do Token de Acesso
+```php
+// Geração do Token de Acesso
+Route::post('/GetToken', [CreateToken::class, 'create']);
 
-- **Rota:** `POST /GetToken`
-- **Controlador:** `CreateToken`
-- **Método:** `create`
-- **Descrição:**
-  - Gera um token de acesso válido por 5 minutos.
-  - O token é salvo no banco de dados para uso posterior.
-  - Caso o token esteja expirado, um novo token é gerado automaticamente.
-
-### 2. Criação de Boleto Bancário
-
-- **Rota:** `POST /boleto/create`
-- **Controlador:** `CreateBoleto`
-- **Método:** `create`
-- **Descrição:**
-  - Utiliza o token gerado previamente para autenticação.
-  - Envia os dados necessários para criar um boleto no sistema do Itaú.
+// Criação de Boleto Bancário
+Route::post('/boleto/create', [CreateBoleto::class, 'create']);
+```
 
 ## Requisitos
 
@@ -30,36 +24,21 @@ Esta API permite a comunicação com os serviços do Itaú para geração de bol
 - Banco de Dados MySQL
 
 ## Instalação
- 
-1. Clone o repositório:
-   ```sh
-   git clone https://github.com/SALVADORBBA/BancoLaravel.git
-   cd BancoLaravel
-   ```
-2. Instale as dependências:
-   ```sh
-   composer install
-   ```
-3. Configure o ambiente:
-   ```sh
-   cp .env.example .env
-   php artisan key:generate
-   ```
-4. Configure as credenciais do Itaú no arquivo `.env`.
-5. Execute as migrações:
-   ```sh
-   php artisan migrate
-   ```
-6. Inicie o servidor:
-   ```sh
-   php artisan serve
-   ```
 
-## Autoração
+```sh
+git clone https://github.com/SALVADORBBA/BancoLaravel.git
+cd BancoLaravel
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
+```
+
+## Autenticação
 
 A geração de boletos requer um token de acesso ativo. Certifique-se de chamar `POST /GetToken` antes de criar boletos.
 
 ## Licença
 
 Este projeto está sob a licença MIT. Sinta-se à vontade para usar e modificar.
-
