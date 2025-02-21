@@ -61,7 +61,14 @@ php artisan serve
 ## Autenticação
 
 A geração de boletos requer um token de acesso ativo. Certifique-se de chamar `POST /GetToken` antes de criar boletos.
+## Contribua com este projeto 💙  
 
+Se este projeto foi útil para você e deseja apoiar o desenvolvimento, contribua com qualquer valor via **PIX**:  
+
+- 📱 **Chave PIX:** (71) 99675-8056  
+- 🏦 **Titular:** Rubens dos Santos  
+
+Toda contribuição é bem-vinda e ajuda a manter o projeto ativo! 🚀  
 ## Licença
 
 Este projeto está sob a licença MIT. Sinta-se à vontade para usar e modificar.
