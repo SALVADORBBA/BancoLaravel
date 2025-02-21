@@ -70,6 +70,7 @@ Se este projeto foi útil para você e deseja apoiar o desenvolvimento, contribu
 - 📱 **Chave PIX:** (71) 99675-8056  
 - 🏦 **Titular:** Rubens dos Santos  
 - [Nosso Canal no Youtube](https://www.youtube.com/@DEVELOPERAPI-BR)
+ ##
 Toda contribuição é bem-vinda e ajuda a manter o projeto ativo! 🚀  
 ## Licença
 
