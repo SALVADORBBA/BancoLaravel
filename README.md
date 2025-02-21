@@ -2,6 +2,29 @@
 
 Esta API permite a comunicação com serviços bancários para a geração de boletos. Atualmente, estamos iniciando a implementação com os bancos **Itaú** e **Santander**, mas o sistema está preparado para a expansão futura para outros bancos.
 
+## Antes de Implementar
+
+Antes de iniciar a implementação, o desenvolvedor deve acessar as áreas de desenvolvedores de cada banco para obter as credenciais de **sandbox** e **produção**:
+
+- [Área de Desenvolvedores do Itaú](https://developer.itau.com.br/)
+- [Área de Desenvolvedores do Santander](https://developer.santander.com.br/)
+
+## Bancos Suportados
+- **Itaú** (implementado)
+- **Santander** (implementado)
+- Outros bancos (em breve)
+
+## Rotas Disponíveis
+
+```php
+// Geração do Token de Acesso
+Route::post('/GetToken', [CreateToken::class, 'create']);
+
+// Criação de Boleto Bancário
+Route::post('/boleto/create', [CreateBoleto::class, 'create']);
+
+Esta API permite a comunicação com serviços bancários para a geração de boletos. Atualmente, estamos iniciando a implementação com os bancos **Itaú** e **Santander**, mas o sistema está preparado para a expansão futura para outros bancos.
+
 ## Bancos Suportados
 - **Itaú** (implementado)
 - **Santander** (implementado)
