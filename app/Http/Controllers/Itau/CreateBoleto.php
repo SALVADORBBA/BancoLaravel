@@ -144,7 +144,7 @@ class CreateBoleto extends Controller
         curl_close($curl);
 
         // Atualizar os dados no banco de dados com base na resposta
-     return   $responseData = json_decode($response);
+    $responseData = json_decode($response);
 
         if ($responseData && isset($responseData->data->dado_boleto->dados_individuais_boleto[0])) {
             $boleto = $responseData->data->dado_boleto->dados_individuais_boleto[0];
@@ -157,7 +157,7 @@ class CreateBoleto extends Controller
             ]);
 
             ControleMeuNumeros::where('id',$meunumero->id)->update([
-                'ultimo_numero'   => $meunumero->numero,
+              //  'ultimo_numero'   => $meunumero->numero,
                 'status'  => 'uso',
                            ]);
 
