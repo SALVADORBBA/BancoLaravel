@@ -1,4 +1,4 @@
-# API de Comunicação com Bancos
+# API de Comunicação com Bancos 
 
 Esta API permite a comunicação com serviços bancários para a geração de boletos. Atualmente, estamos iniciando a implementação com os bancos **Itaú** e **Santander**, mas o sistema está preparado para a expansão futura para outros bancos.
 
