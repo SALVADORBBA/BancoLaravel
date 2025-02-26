@@ -10,6 +10,14 @@ Antes de iniciar a implementação, o desenvolvedor deve acessar as áreas de de
 - [Área de Desenvolvedores do Santander](https://developer.santander.com.br/)
 - [Área de Desenvolvedores do Sicredi](https://www.sicredi.com.br/site/developers/)
 
+ 
+## Requisitos de Certificado Digital
+
+- Itaú: Necessita gerar o certificado A1.
+- Santander: Pode utilizar o certificado A1 padrão, o mesmo usado para a emissão de documentos fiscais.
+- Sicredi: O certificado A1 é necessário apenas para gerar as credenciais no portal do banco.
+
+
 ## Bancos Suportados
 
 - **Itaú** (implementado)
