@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Sicredi;
 
 use App\Http\Controllers\Controller;
+use App\Models\ParametroBanco;
 use Illuminate\Http\Request;
 
 class CreateTokensSC extends Controller
@@ -23,7 +24,7 @@ class CreateTokensSC extends Controller
  
  
         // Busca os parâmetros do banco com o id fornecido
-      $parametros = ParametroBanco::find($key);
+        $parametros = ParametroBanco::find($key);
         // Se os parâmetros não forem encontrados, retorna erro 404
         if (!$parametros) {
             return response()->json(['error' => 'Chave inválida'], 404);
@@ -41,27 +42,43 @@ class CreateTokensSC extends Controller
         $certificadoPath = storage_path($parametros->certificado);
         // Inicializa a sessão cURL para fazer a requisição HTTP para o API do Itau
  
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_URL =>  $parametros->url1,
-            CURLOPT_SSLCERTTYPE => 'P12',
-            CURLOPT_SSLCERT =>  $certificadoPath,
-            CURLOPT_SSLCERTPASSWD => $parametros->senha,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => 'client_id=' . $parametros->client_id . '&client_secret=' . $parametros->client_secret . '&grant_type=client_credentials',
-            CURLOPT_HTTPHEADER => array(
-                'Content-Type: application/x-www-form-urlencoded'
-            ),
-        ));
+        $password= ($parametros->ambiente == 1) ? $parametros->password : $parametros->password_homologacao;
+        $usuario= ($parametros->ambiente == 1) ? $parametros->username : $parametros->usuario_homologacao;
+       // Caso o token tenha expirado, gera um novo access_token
 
-        $response = curl_exec($curl);
-        curl_close($curl);
+      $Url= ($parametros->ambiente == 1) ? $parametros->url_token_producao : $parametros->url1;
+      $clint_id = ($parametros->ambiente == 2) ? $parametros->client_id : $parametros->client_id_producao;
+      
+      $url_Composicao = "username={$usuario}&password={$password}&scope={$parametros->scope}&grant_type=password";
+      
+
+       // Inicializar uma requisição CURL.
+       $curl = curl_init();
+
+       // Configurar as opções da requisição CURL.
+       curl_setopt_array($curl, array(
+           CURLOPT_URL =>$Url,
+
+           CURLOPT_RETURNTRANSFER => true,
+           CURLOPT_FOLLOWLOCATION => true,
+           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+           CURLOPT_CUSTOMREQUEST => 'POST',
+           CURLOPT_POSTFIELDS => $url_Composicao,
+           CURLOPT_HTTPHEADER => array(
+               'ContentType: application/x-www-form-urlencoded',
+               'x-api-key: ' . $clint_id,
+               'context: COBRANCA'
+           ),
+       ));
+
+       // Executar a requisição CURL e obter a resposta.
+       $response = curl_exec($curl);
+
+       // Encerrar a requisição CURL.
+       curl_close($curl);
+
+       // Decodificar a resposta JSON.
+       $response = json_decode($response);
  
         // Verifica se houve erro durante a requisição cURL
         if ($response === false) {
