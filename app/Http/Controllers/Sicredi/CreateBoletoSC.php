@@ -31,6 +31,8 @@ class CreateBoletoSC extends Controller
         $this->meunumero = ControleMeuNumeroController::create($this->parametros->id);
 
         $this->beneficiario = Beneficiario::find($this->titulos->beneficiario_id);
+
+       // $this->beneficiario = Beneficiario::where('id', $this->titulos->beneficiario_id)->pluck('id','nome',)->first();
     }
 
     public function create()
@@ -166,7 +168,15 @@ class CreateBoletoSC extends Controller
                 'qrCodeUrl' => $response->qrCode,
                 'status'   => 3,
             ]);
-            return 'Boleto gerado com sucesso!';
+            return response()->json([
+                'Banco' =>$this->parametros->apelido,
+                'message' => 'Boleto gerado com sucesso!',
+               // 'Beneficiario' =>  $this->beneficiario,
+             'Cliete' => $this->titulos->pessoa->nome,
+             'Docuemnto' => $this->titulos->pessoa->documento,
+                'data' =>  $response
+            ], 201);
+            
         } catch (Exception $e) {
             return 'Erro ao enviar o boleto: ' . $e->getMessage();
         }
