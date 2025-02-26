@@ -160,7 +160,8 @@ class CreateBoletoSC extends Controller
             // Atualiza os dados no banco
 
             ContasReceber::where('id', $this->titulos->id)->update([
-                'nossonumero'   => $response->nossoNumero,
+           'nossonumero'   => $response->nossoNumero,
+           'seunumero'   =>   $this->meunumero->numero,
                 'codigobarras'  => $response->codigoBarras,
                 'linhadigitavel' => $response->linhaDigitavel,
                 'beneficiario_id' =>  $this->beneficiario->id,
@@ -168,10 +169,20 @@ class CreateBoletoSC extends Controller
                 'qrCodeUrl' => $response->qrCode,
                 'status'   => 3,
             ]);
+
+
+
+            ControleMeuNumeros::where('id', $this->meunumero->id)->update([
+                'status'  => 'uso',
+            ]);
+
             return response()->json([
                 'Banco' =>$this->parametros->apelido,
                 'message' => 'Boleto gerado com sucesso!',
-               // 'Beneficiario' =>  $this->beneficiario,
+                'Boleto' =>$this->meunumero->numero,
+                'Valor' =>$this->titulos->valor,
+                'Vencimento' =>$this->titulos->data_vencimento,
+              'Beneficiario' =>  $this->beneficiario->nome,
              'Cliete' => $this->titulos->pessoa->nome,
              'Docuemnto' => $this->titulos->pessoa->documento,
                 'data' =>  $response
