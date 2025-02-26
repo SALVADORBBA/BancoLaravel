@@ -14,6 +14,8 @@ use App\Http\Controllers\Santander\WorkspaceBusca;
 use App\Http\Controllers\Santander\CreateBoletoSTD;
 use App\Http\Controllers\Santander\SolicitacaoBaixaBoleto;
 use App\Http\Controllers\Santander\WorkspaceSantanderController;
+use App\Http\Controllers\Sicredi\CreateBoletoSC;
+use App\Http\Controllers\Sicredi\CreateTokensSC;
 use App\Http\Controllers\WebhookController;
 
 /*
@@ -57,3 +59,7 @@ Route::post('/santander/create', [CreateBoletoSTD::class, 'create']);
 Route::post('/santander/Baixa', [SolicitacaoBaixaBoleto::class, 'store']);
 
 Route::post('/Localizar', [BoletosRest::class, 'store']);
+
+
+//////////sicredi
+Route::post('/Sicredi/CreateBoleto', [CreateBoletoSC::class, 'create']);
