@@ -37,6 +37,24 @@ class ClassGenerica extends Controller
     {
         return preg_replace('/[^a-zA-Z0-9\s]/', '', $value);
     }
+    public static function tipodoc($tipo)
+    {
+        
+         if (strlen($tipo) === 11) {
+            return $tipo_pessoa = "PESSOA_FISICA";
+        } else {
+          return $tipo_pessoa = "PESSOA_JURIDICA";
+        }
+    
+         
+    } 
+    public static  function cleandoc( $value){
+        
+        
+        return $value= preg_replace('/[^a-zA-Z0-9\s]/', '', $value);
+ 
+         
+     }
   public static function TrataDoc($valor)
   {
     $antes = ['+', '.', '-', '/', '(', ')', ' '];
