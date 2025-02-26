@@ -16,8 +16,8 @@ Antes de iniciar a implementação, o desenvolvedor deve acessar as áreas de de
 ## Requisitos de Certificado Digital
 
 - Itaú: Necessita gerar o certificado A1.
-## [Documentação](https://devportal-portalassets-hom.cloud.itau.com.br/curl.mp4)
-## [Video Tutorial](https://devportal.itau.com.br/certificado-dinamico)
+- 📕 [Documentação](https://devportal-portalassets-hom.cloud.itau.com.br/curl.mp4)
+- ▶️[Video Tutorial](https://devportal.itau.com.br/certificado-dinamico)
 
 - Santander: Pode utilizar o certificado A1 padrão, o mesmo usado para a emissão de documentos fiscais.
 - Sicredi: O certificado A1 é necessário apenas para gerar as credenciais no portal do banco.
