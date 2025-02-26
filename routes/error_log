@@ -1,0 +1,4 @@
+[17-Feb-2025 20:23:15 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/develope/apibancos.developerapi.com.br/laravel/routes/api.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/routes/api.php on line 26

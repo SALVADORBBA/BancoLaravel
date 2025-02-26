@@ -1,0 +1,3 @@
+[13-Feb-2025 16:17:48 UTC] PHP Fatal error:  Cannot use App\Http\Controllers\ClassGlobais\ClassGenerica as ClassGenerica because the name is already in use in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Controllers/Itau/CreateToken.php on line 9
+[13-Feb-2025 22:57:25 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\ClassGlobais\ClassGenerica::limitarTexto() in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Controllers/ClassGlobais/ClassGenerica.php on line 50
+[13-Feb-2025 22:57:50 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\ClassGlobais\ClassGenerica::limitarTexto() in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Controllers/ClassGlobais/ClassGenerica.php on line 50

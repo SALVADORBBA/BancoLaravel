@@ -1,0 +1,24 @@
+[13-Feb-2025 13:53:52 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/develope/apibancos.developerapi.com.br/laravel/database/seeders/DatabaseSeeder.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/database/seeders/DatabaseSeeder.php on line 8
+[13-Feb-2025 13:53:53 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/develope/apibancos.developerapi.com.br/laravel/database/seeders/DatabaseSeeder.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/database/seeders/DatabaseSeeder.php on line 8
+[13-Feb-2025 16:40:53 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/develope/apibancos.developerapi.com.br/laravel/database/seeders/DatabaseSeeder.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/database/seeders/DatabaseSeeder.php on line 8
+[13-Feb-2025 19:32:09 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/develope/apibancos.developerapi.com.br/laravel/database/seeders/DatabaseSeeder.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/database/seeders/DatabaseSeeder.php on line 8
+[13-Feb-2025 19:32:10 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/develope/apibancos.developerapi.com.br/laravel/database/seeders/DatabaseSeeder.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/database/seeders/DatabaseSeeder.php on line 8
+[13-Feb-2025 20:32:02 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Database\Seeder" not found in /home/develope/apibancos.developerapi.com.br/laravel/database/seeders/DatabaseSeeder.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/database/seeders/DatabaseSeeder.php on line 8

@@ -1,0 +1,128 @@
+[13-Feb-2025 13:55:06 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Auth\Middleware\Authenticate" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/Authenticate.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/Authenticate.php on line 8
+[13-Feb-2025 13:55:08 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Auth\Middleware\Authenticate" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/Authenticate.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/Authenticate.php on line 8
+[13-Feb-2025 13:55:08 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cookie\Middleware\EncryptCookies" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/EncryptCookies.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/EncryptCookies.php on line 7
+[13-Feb-2025 13:55:09 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cookie\Middleware\EncryptCookies" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/EncryptCookies.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/EncryptCookies.php on line 7
+[13-Feb-2025 13:55:09 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/PreventRequestsDuringMaintenance.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/PreventRequestsDuringMaintenance.php on line 7
+[13-Feb-2025 13:55:10 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/PreventRequestsDuringMaintenance.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/PreventRequestsDuringMaintenance.php on line 7
+[13-Feb-2025 13:55:10 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\TrimStrings" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrimStrings.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrimStrings.php on line 7
+[13-Feb-2025 13:55:12 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\TrimStrings" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrimStrings.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrimStrings.php on line 7
+[13-Feb-2025 13:55:12 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Middleware\TrustHosts" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustHosts.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustHosts.php on line 7
+[13-Feb-2025 13:55:13 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Middleware\TrustHosts" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustHosts.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustHosts.php on line 7
+[13-Feb-2025 13:55:13 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Middleware\TrustProxies" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustProxies.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustProxies.php on line 8
+[13-Feb-2025 13:55:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Middleware\TrustProxies" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustProxies.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustProxies.php on line 8
+[13-Feb-2025 13:55:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Routing\Middleware\ValidateSignature" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/ValidateSignature.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/ValidateSignature.php on line 7
+[13-Feb-2025 13:55:15 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Routing\Middleware\ValidateSignature" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/ValidateSignature.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/ValidateSignature.php on line 7
+[13-Feb-2025 13:55:15 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\VerifyCsrfToken" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/VerifyCsrfToken.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/VerifyCsrfToken.php on line 7
+[13-Feb-2025 13:55:16 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\VerifyCsrfToken" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/VerifyCsrfToken.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/VerifyCsrfToken.php on line 7
+[13-Feb-2025 19:34:27 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Auth\Middleware\Authenticate" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/Authenticate.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/Authenticate.php on line 8
+[13-Feb-2025 19:34:28 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Auth\Middleware\Authenticate" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/Authenticate.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/Authenticate.php on line 8
+[13-Feb-2025 19:34:29 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cookie\Middleware\EncryptCookies" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/EncryptCookies.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/EncryptCookies.php on line 7
+[13-Feb-2025 19:34:30 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Cookie\Middleware\EncryptCookies" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/EncryptCookies.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/EncryptCookies.php on line 7
+[13-Feb-2025 19:34:30 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/PreventRequestsDuringMaintenance.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/PreventRequestsDuringMaintenance.php on line 7
+[13-Feb-2025 19:34:31 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/PreventRequestsDuringMaintenance.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/PreventRequestsDuringMaintenance.php on line 7
+[13-Feb-2025 19:34:32 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\TrimStrings" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrimStrings.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrimStrings.php on line 7
+[13-Feb-2025 19:34:33 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\TrimStrings" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrimStrings.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrimStrings.php on line 7
+[13-Feb-2025 19:34:34 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Middleware\TrustHosts" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustHosts.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustHosts.php on line 7
+[13-Feb-2025 19:34:35 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Middleware\TrustHosts" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustHosts.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustHosts.php on line 7
+[13-Feb-2025 19:34:35 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Middleware\TrustProxies" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustProxies.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustProxies.php on line 8
+[13-Feb-2025 19:34:36 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Http\Middleware\TrustProxies" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustProxies.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/TrustProxies.php on line 8
+[13-Feb-2025 19:34:36 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Routing\Middleware\ValidateSignature" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/ValidateSignature.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/ValidateSignature.php on line 7
+[13-Feb-2025 19:34:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Routing\Middleware\ValidateSignature" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/ValidateSignature.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/ValidateSignature.php on line 7
+[13-Feb-2025 19:34:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\VerifyCsrfToken" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/VerifyCsrfToken.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/VerifyCsrfToken.php on line 7
+[13-Feb-2025 19:34:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Http\Middleware\VerifyCsrfToken" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/VerifyCsrfToken.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Http/Middleware/VerifyCsrfToken.php on line 7

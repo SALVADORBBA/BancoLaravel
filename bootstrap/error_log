@@ -1,0 +1,24 @@
+[13-Feb-2025 13:52:44 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/develope/apibancos.developerapi.com.br/laravel/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/bootstrap/app.php on line 14
+[13-Feb-2025 13:52:46 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/develope/apibancos.developerapi.com.br/laravel/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/bootstrap/app.php on line 14
+[13-Feb-2025 14:37:53 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/develope/apibancos.developerapi.com.br/laravel/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/bootstrap/app.php on line 14
+[13-Feb-2025 19:30:23 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/develope/apibancos.developerapi.com.br/laravel/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/bootstrap/app.php on line 14
+[13-Feb-2025 19:30:25 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/develope/apibancos.developerapi.com.br/laravel/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/bootstrap/app.php on line 14
+[13-Feb-2025 20:04:07 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/develope/apibancos.developerapi.com.br/laravel/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/bootstrap/app.php on line 14

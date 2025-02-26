@@ -1,0 +1,20 @@
+[13-Feb-2025 13:54:02 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Tests\TestCase" not found in /home/develope/apibancos.developerapi.com.br/laravel/tests/Feature/ExampleTest.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/tests/Feature/ExampleTest.php on line 8
+[13-Feb-2025 13:54:03 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Tests\TestCase" not found in /home/develope/apibancos.developerapi.com.br/laravel/tests/Feature/ExampleTest.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/tests/Feature/ExampleTest.php on line 8
+[13-Feb-2025 19:32:28 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Tests\TestCase" not found in /home/develope/apibancos.developerapi.com.br/laravel/tests/Feature/ExampleTest.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/tests/Feature/ExampleTest.php on line 8
+[13-Feb-2025 19:32:29 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Tests\TestCase" not found in /home/develope/apibancos.developerapi.com.br/laravel/tests/Feature/ExampleTest.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/tests/Feature/ExampleTest.php on line 8
+[13-Feb-2025 20:38:52 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Tests\TestCase" not found in /home/develope/apibancos.developerapi.com.br/laravel/tests/Feature/ExampleTest.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/tests/Feature/ExampleTest.php on line 8

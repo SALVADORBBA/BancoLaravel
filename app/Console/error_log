@@ -1,0 +1,24 @@
+[13-Feb-2025 13:53:25 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Console\Kernel" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Console/Kernel.php on line 8
+[13-Feb-2025 13:53:26 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Console\Kernel" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Console/Kernel.php on line 8
+[13-Feb-2025 15:59:45 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Console\Kernel" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Console/Kernel.php on line 8
+[13-Feb-2025 19:31:25 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Console\Kernel" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Console/Kernel.php on line 8
+[13-Feb-2025 19:31:26 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Console\Kernel" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Console/Kernel.php on line 8
+[13-Feb-2025 20:22:55 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Console\Kernel" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Console/Kernel.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Console/Kernel.php on line 8

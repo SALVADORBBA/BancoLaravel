@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -23,8 +24,12 @@ class ContasReceber extends Model
         'codigobarras',
         'etapa_processo_boleto',
         'txid',
-        'pdfboletobase64'
+        'pdfboletobase64',
+        'qrCodePix',
+        'qrCodeUrl'
     ];
+
+
 
     public function pessoa()
     {

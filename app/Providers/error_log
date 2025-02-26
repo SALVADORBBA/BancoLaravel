@@ -1,0 +1,120 @@
+[13-Feb-2025 13:53:34 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AppServiceProvider.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AppServiceProvider.php on line 7
+[13-Feb-2025 13:53:35 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AppServiceProvider.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AppServiceProvider.php on line 7
+[13-Feb-2025 13:53:36 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\AuthServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AuthServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AuthServiceProvider.php on line 8
+[13-Feb-2025 13:53:37 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\AuthServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AuthServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AuthServiceProvider.php on line 8
+[13-Feb-2025 13:53:37 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/BroadcastServiceProvider.php on line 8
+[13-Feb-2025 13:53:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/BroadcastServiceProvider.php on line 8
+[13-Feb-2025 13:53:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\EventServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/EventServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/EventServiceProvider.php on line 10
+[13-Feb-2025 13:53:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\EventServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/EventServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/EventServiceProvider.php on line 10
+[13-Feb-2025 13:53:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\RouteServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/RouteServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/RouteServiceProvider.php on line 11
+[13-Feb-2025 13:53:40 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\RouteServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/RouteServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/RouteServiceProvider.php on line 11
+[13-Feb-2025 16:16:52 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AppServiceProvider.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AppServiceProvider.php on line 7
+[13-Feb-2025 16:16:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\AuthServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AuthServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AuthServiceProvider.php on line 8
+[13-Feb-2025 16:17:23 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/BroadcastServiceProvider.php on line 8
+[13-Feb-2025 16:17:24 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\EventServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/EventServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/EventServiceProvider.php on line 10
+[13-Feb-2025 16:17:40 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\RouteServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/RouteServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/RouteServiceProvider.php on line 11
+[13-Feb-2025 19:31:41 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AppServiceProvider.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AppServiceProvider.php on line 7
+[13-Feb-2025 19:31:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AppServiceProvider.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AppServiceProvider.php on line 7
+[13-Feb-2025 19:31:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\AuthServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AuthServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AuthServiceProvider.php on line 8
+[13-Feb-2025 19:31:44 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\AuthServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AuthServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AuthServiceProvider.php on line 8
+[13-Feb-2025 19:31:44 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/BroadcastServiceProvider.php on line 8
+[13-Feb-2025 19:31:45 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/BroadcastServiceProvider.php on line 8
+[13-Feb-2025 19:31:46 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\EventServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/EventServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/EventServiceProvider.php on line 10
+[13-Feb-2025 19:31:47 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\EventServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/EventServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/EventServiceProvider.php on line 10
+[13-Feb-2025 19:31:47 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\RouteServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/RouteServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/RouteServiceProvider.php on line 11
+[13-Feb-2025 19:31:48 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\RouteServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/RouteServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/RouteServiceProvider.php on line 11
+[13-Feb-2025 20:27:54 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AppServiceProvider.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AppServiceProvider.php on line 7
+[13-Feb-2025 20:28:23 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\AuthServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AuthServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/AuthServiceProvider.php on line 8
+[13-Feb-2025 20:28:26 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\ServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/BroadcastServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/BroadcastServiceProvider.php on line 8
+[13-Feb-2025 20:28:52 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\EventServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/EventServiceProvider.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/EventServiceProvider.php on line 10
+[13-Feb-2025 20:29:01 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Support\Providers\RouteServiceProvider" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/RouteServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Providers/RouteServiceProvider.php on line 11

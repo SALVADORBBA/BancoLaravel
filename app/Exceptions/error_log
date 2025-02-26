@@ -1,0 +1,24 @@
+[13-Feb-2025 13:53:27 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Exceptions\Handler" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Exceptions/Handler.php on line 8
+[13-Feb-2025 13:53:28 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Exceptions\Handler" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Exceptions/Handler.php on line 8
+[13-Feb-2025 16:04:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Exceptions\Handler" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Exceptions/Handler.php on line 8
+[13-Feb-2025 19:31:28 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Exceptions\Handler" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Exceptions/Handler.php on line 8
+[13-Feb-2025 19:31:29 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Exceptions\Handler" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Exceptions/Handler.php on line 8
+[13-Feb-2025 20:24:02 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Exceptions\Handler" not found in /home/develope/apibancos.developerapi.com.br/laravel/app/Exceptions/Handler.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/develope/apibancos.developerapi.com.br/laravel/app/Exceptions/Handler.php on line 8
