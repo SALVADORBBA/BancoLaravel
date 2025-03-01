@@ -59,7 +59,6 @@ Route::post('/santander/create', [CreateBoletoSTD::class, 'create']);
 Route::post('/santander/Baixa', [SolicitacaoBaixaBoleto::class, 'store']);
 
 Route::post('/Localizar', [BoletosRest::class, 'store']);
-
-
+ 
 //////////sicredi
 Route::post('/Sicredi/CreateBoleto', [CreateBoletoSC::class, 'create']);
