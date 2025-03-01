@@ -23,7 +23,7 @@ class CreateTokenSTD extends Controller
  
  
         // Busca os parâmetros do banco com o id fornecido
-      $parametros = ParametroBanco::find($key);
+        $parametros = ParametroBanco::find($key);
         // Se os parâmetros não forem encontrados, retorna erro 404
         if (!$parametros) {
             return response()->json(['error' => 'Chave inválida'], 404);
@@ -69,6 +69,8 @@ class CreateTokenSTD extends Controller
         }
         // Decodifica a resposta JSON
         $data = json_decode($response);
+
+        return  $data ;
         // Verifica se o campo access_token está presente na resposta
         if (!isset($data->access_token)) {
             return response()->json(['error' => 'Erro ao obter token'], 500);
