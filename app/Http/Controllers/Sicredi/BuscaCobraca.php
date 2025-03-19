@@ -30,79 +30,60 @@ class BuscaCobraca extends Controller
      */
     public function search()
     {
+        try {
+            $url_param = $this->parametros->ambiente == 1 ? $this->parametros->url_boleto_producao : $this->parametros->url2;
+            $xapikey = $this->parametros->ambiente == 1 ? $this->parametros->client_id_producao : $this->parametros->client_id;
+            $posto = $this->parametros->ambiente == 1 ? $this->parametros->posto : "03";
+            $cooperativa = $this->parametros->ambiente == 1 ? $this->parametros->cooperativa : '6789';
+            $codigoBeneficiario = $this->parametros->ambiente == 1 ? $this->parametros->numerocontrato : 12345;
 
-        $url_param = $this->parametros->ambiente == 1 ? $this->parametros->url_boleto_producao : $this->parametros->url2;
-        $xapikey = $this->parametros->ambiente == 1 ? $this->parametros->client_id_producao : $this->parametros->client_id;
-        $posto = $this->parametros->ambiente == 1 ? $this->parametros->posto : "03";
-        $cooperativa = $this->parametros->ambiente == 1 ? $this->parametros->cooperativa : '6789';
-        $codigoBeneficiario = $this->parametros->ambiente == 1 ? $this->parametros->numerocontrato : 12345;
+            $curl = curl_init();
 
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => $url_param . '?codigoBeneficiario=' . $codigoBeneficiario . '&nossoNumero=' . $this->nossoNumero,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                    'Authorization: Bearer ' . $this->token,
+                    'x-api-key: ' . $xapikey,
+                    'Content-Type: application/json',
+                    'cooperativa: ' . $cooperativa,
+                    'posto: ' . $posto,
+                    'data-movimento: true'
+                ),
+            ));
 
-        $curl = curl_init();
+            $response = curl_exec($curl);
 
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => $url_param . '?codigoBeneficiario=' . $codigoBeneficiario . '&nossoNumero=' . $this->nossoNumero,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'GET',
-            CURLOPT_HTTPHEADER => array(
-                'Authorization: Bearer ' . $this->token,
-                'x-api-key: ' . $xapikey,
-                'Content-Type: application/json',
-                'cooperativa: ' . $cooperativa,
-                'posto: ' . $posto,
-                'data-movimento: true'
-            ),
-        ));
+            if ($response === false) {
+                throw new \Exception('Erro na requisição cURL: ' . curl_error($curl));
+            }
 
-        $response = curl_exec($curl);
-        curl_close($curl);
+            curl_close($curl);
 
-        $response = json_decode($response);
-        return $response;
-    }
+            $decodedResponse = json_decode($response);
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                throw new \Exception('Erro ao decodificar resposta JSON: ' . json_last_error_msg());
+            }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+            return [
+                'success' => true,
+                'data' => $decodedResponse,
+                'message' => 'Consulta realizada com sucesso'
+            ];
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        } catch (\Exception $e) {
+            return [
+                'success' => false,
+                'message' => 'Erro ao realizar consulta: ' . $e->getMessage(),
+                'data' => null
+            ];
+        }
     }
 }

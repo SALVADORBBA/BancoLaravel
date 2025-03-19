@@ -34,43 +34,61 @@ class ConsultaBaixaBoletoController extends Controller
 
     public function search()
     {
-      
-       
-        $url_param = $this->parametros->ambiente == 1 ? $this->parametros->url_boleto_producao : $this->parametros->url2;
-        $xapikey = $this->parametros->ambiente == 1 ? $this->parametros->client_id_producao : $this->parametros->client_id;
-        $posto = $this->parametros->ambiente == 1 ? $this->parametros->posto : "03";
-        $cooperativa = $this->parametros->ambiente == 1 ? $this->parametros->cooperativa : '6789';
-        $codigoBeneficiario = $this->parametros->ambiente == 1 ? $this->parametros->numerocontrato : 12345;
+        try {
+            $url_param = $this->parametros->ambiente == 1 ? $this->parametros->url_boleto_producao : $this->parametros->url2;
+            $xapikey = $this->parametros->ambiente == 1 ? $this->parametros->client_id_producao : $this->parametros->client_id;
+            $posto = $this->parametros->ambiente == 1 ? $this->parametros->posto : "03";
+            $cooperativa = $this->parametros->ambiente == 1 ? $this->parametros->cooperativa : '6789';
+            $codigoBeneficiario = $this->parametros->ambiente == 1 ? $this->parametros->numerocontrato : 12345;
 
-  
             $data = $this->data ?? date('d/m/Y');
 
             $curl = curl_init();
 
             curl_setopt_array($curl, [
-                CURLOPT_URL => $url_param.'/liquidados/dia?codigoBeneficiario='.$codigoBeneficiario.'&dia=' . $data, // Substitua pela URL de seu endpoint
-                CURLOPT_RETURNTRANSFER => true, // Retorna a resposta como string
+                CURLOPT_URL => $url_param.'/liquidados/dia?codigoBeneficiario='.$codigoBeneficiario.'&dia=' . $data,
+                CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
-                CURLOPT_MAXREDIRS => 10, // Redirecionamentos máximos
-                CURLOPT_TIMEOUT => 10, // Timeout de 10 segundos
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 10,
                 CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1, // Usando HTTP 1.1
-                CURLOPT_CUSTOMREQUEST => 'GET', // Ou o método HTTP que você preferir
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'GET',
                 CURLOPT_HTTPHEADER => [
-                    'Authorization: Bearer ' .  $this->token, // Substitua com seu token de autenticação
-                    'Content-Type: application/json', // Tipo de conteúdo JSON
-                    'Cooperativa: ' . $cooperativa, // Exemplo de cabeçalho específico
-                    'Posto: ' . $posto, // Exemplo de cabeçalho específico
-                    'x-api-key: ' . $xapikey, // Exemplo de chave API
+                    'Authorization: Bearer ' .  $this->token,
+                    'Content-Type: application/json',
+                    'Cooperativa: ' . $cooperativa,
+                    'Posto: ' . $posto,
+                    'x-api-key: ' . $xapikey,
                 ],
-                CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_2, // Garante que o TLS 1.2 será utilizado
+                CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_2,
             ]);
 
             $response = curl_exec($curl);
+            $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
 
-            // Decodificando a resposta JSON para objeto PHP
-            $responseObject = json_decode($response);
-             return $responseObject;
-  
+            if ($httpCode == 200) {
+                $responseObject = json_decode($response);
+                return [
+                    'success' => true,
+                    'data' => $responseObject,
+                    'message' => 'Consulta realizada com sucesso'
+                ];
+            }
+
+            return [
+                'success' => false,
+                'data' => null,
+                'message' => 'Erro ao realizar consulta. Status code: ' . $httpCode
+            ];
+
+        } catch (\Exception $e) {
+            return [
+                'success' => false,
+                'data' => null,
+                'message' => 'Erro ao processar a requisição: ' . $e->getMessage()
+            ];
+        }
     }
 }
