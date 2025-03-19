@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "67687274-d038-4511-90e5-57a399fe0e61",
+		"name": "Collection Sicredi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8200460",
+		"_collection_link": "https://crimson-station-558433.postman.co/workspace/Itau-api~df93385c-ac8c-48b5-9cd1-67c354f1281f/collection/8200460-67687274-d038-4511-90e5-57a399fe0e61?action=share&source=collection_link&creator=8200460"
+	},
+	"item": [
+		{
+			"name": "Configuração",
+			"item": [
+				{
+					"name": "Gerar Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Sicredi/CreateBoleto",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Sicredi",
+								"CreateBoleto"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Boletos",
+			"item": [
+				{
+					"name": "Gerar Cobrança",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "19",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Sicredi/CreateBoleto",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Sicredi",
+								"CreateBoleto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Imprimir Boleto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "19",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Sicredi/Print?key=3&linhadigitavel=74891121150039736789903123451001187340000000050",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Sicredi",
+								"Print"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "3"
+								},
+								{
+									"key": "linhadigitavel",
+									"value": "74891121150039736789903123451001187340000000050"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Boleto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "key",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "nossoNumero",
+									"value": "000000001",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Sicredi/Buscar",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Sicredi",
+								"Buscar"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Boleto DIA",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "key",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "data",
+									"value": "18/03/2025",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Sicredi/Consultar",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Sicredi",
+								"Consultar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solicitação de beixa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "19",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/Sicredi/SolicitacaoBaixa",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"Sicredi",
+								"SolicitacaoBaixa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
