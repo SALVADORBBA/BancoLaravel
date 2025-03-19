@@ -3,11 +3,12 @@
 
 namespace App\Http\Controllers\Sicredi;
 
+use App\Http\Controllers\ConsultarCobrancaSicrediController;
 use App\Http\Controllers\Controller;
+use App\Models\ContasReceber;
 use Illuminate\Http\Request;
 use App\Models\ParametrosBancos;
-use App\Models\Contasrec;
-use App\Models\ContasReceber;
+  
 use App\Models\ParametroBanco;
 use App\Services\GetTokenSicredi;
 use App\Services\ConsultarCobrancaSicredi;
@@ -16,14 +17,14 @@ use Illuminate\Support\Facades\Http;
 class ConsultaBaixaBoletoController extends Controller
 {
     private $key;
-    private $tipo;
+    private $data;
     private $parametros;
     private $token;
 
-    public function __construct($key, $tipo = null)
+    public function __construct(request $request)
     {
-        $this->key = $key;
-        $this->tipo = $tipo;
+        $this->key =$request->key;
+        $this->data = $request->data;
         
         // Busca os parâmetros do banco
         $this->parametros = ParametroBanco::findOrFail($this->key);
@@ -31,64 +32,45 @@ class ConsultaBaixaBoletoController extends Controller
          $this->token =CreateTokensSC::create($this->parametros);
     }
 
-    public function onShow(Request $request)
+    public function search()
     {
+      
+       
         $url_param = $this->parametros->ambiente == 1 ? $this->parametros->url_boleto_producao : $this->parametros->url2;
         $xapikey = $this->parametros->ambiente == 1 ? $this->parametros->client_id_producao : $this->parametros->client_id;
         $posto = $this->parametros->ambiente == 1 ? $this->parametros->posto : "03";
         $cooperativa = $this->parametros->ambiente == 1 ? $this->parametros->cooperativa : '6789';
         $codigoBeneficiario = $this->parametros->ambiente == 1 ? $this->parametros->numerocontrato : 12345;
 
-        if ($this->tipo == 1) {
-            $data = now()->format('d/m/Y');
+  
+            $data = $this->data ?? date('d/m/Y');
 
-            $response = Http::withHeaders([
-                'Authorization' => 'Bearer ' . $this->token,
-                'Content-Type' => 'application/json',
-                'Cooperativa' => $cooperativa,
-                'Posto' => $posto,
-                'x-api-key' => $xapikey,
-            ])->get("{$url_param}/liquidados/dia", [
-                'codigoBeneficiario' => $codigoBeneficiario,
-                'dia' => $data,
+            $curl = curl_init();
+
+            curl_setopt_array($curl, [
+                CURLOPT_URL => $url_param.'/liquidados/dia?codigoBeneficiario='.$codigoBeneficiario.'&dia=' . $data, // Substitua pela URL de seu endpoint
+                CURLOPT_RETURNTRANSFER => true, // Retorna a resposta como string
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10, // Redirecionamentos máximos
+                CURLOPT_TIMEOUT => 10, // Timeout de 10 segundos
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1, // Usando HTTP 1.1
+                CURLOPT_CUSTOMREQUEST => 'GET', // Ou o método HTTP que você preferir
+                CURLOPT_HTTPHEADER => [
+                    'Authorization: Bearer ' .  $this->token, // Substitua com seu token de autenticação
+                    'Content-Type: application/json', // Tipo de conteúdo JSON
+                    'Cooperativa: ' . $cooperativa, // Exemplo de cabeçalho específico
+                    'Posto: ' . $posto, // Exemplo de cabeçalho específico
+                    'x-api-key: ' . $xapikey, // Exemplo de chave API
+                ],
+                CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_2, // Garante que o TLS 1.2 será utilizado
             ]);
 
-            if ($response->failed()) {
-                return response()->json(['error' => 'Erro na requisição Sicredi'], 500);
-            }
+            $response = curl_exec($curl);
 
-            $responseObject = $response->json();
-
-            // Ordena do menor para o maior
-            usort($responseObject['items'], fn ($b, $a) => $a['nossoNumero'] <=> $b['nossoNumero']);
-
-            $resposta = [];
-
-            foreach ($responseObject['items'] as $item) {
-                $objeto = ContasReceber::where('nossonumero', $item['nossoNumero'])
-                    ->whereIn('status_id', [2, 5, 7, 10])
-                    ->first();
-
-                if ($objeto) {
-                    $responses = new ConsultarCobrancaSicredi($objeto->id);
-                    $message = $responses->search();
-
-                    if ($message) {
-                        $resposta[] = $message;
-                    }
-                }
-            }
-
-            return response()->json($resposta);
-        } else {
-            $objetos = Contasrec::whereIn('status_id', [2, 5, 7, 10])
-                ->inRandomOrder()
-                ->limit(1)
-                ->get();
-
-            $ids = $objetos->pluck('id');
-
-            return response()->json($ids);
-        }
+            // Decodificando a resposta JSON para objeto PHP
+            $responseObject = json_decode($response);
+             return $responseObject;
+  
     }
 }
