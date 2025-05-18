@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BoletosRest;
+use App\Http\Controllers\Bradesco\GetTokenBradesco;
 use App\Http\Controllers\Itau\CreateBoleto;
 use App\Http\Controllers\Itau\CreateToken;
  
@@ -71,4 +72,8 @@ Route::post('/Sicredi/Consultar', [ConsultaBaixaBoletoController::class, 'search
 Route::post('/Sicredi/Buscar', [BuscaCobraca::class, 'search']);
 Route::get('/Sicredi/Print', [PrintBoleto::class, 'Print']);
 Route::post('/Sicredi/SolicitacaoBaixa', [BaixaBoletoSicredi::class, 'store']);
+
+//////////Bradesco
+ 
+Route::post('/Bradesco/Tokens', [GetTokenBradesco::class, 'create']);
 
