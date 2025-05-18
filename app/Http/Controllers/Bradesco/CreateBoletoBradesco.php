@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Bradesco;
- 
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ContasReceber;
@@ -26,8 +26,8 @@ class CreateBoletoBradesco extends Controller
         // Inicializando as variáveis necessárias
         $this->titulos = ContasReceber::find($request->id);
         $this->parametros = ParametroBanco::find($this->titulos->parametros_bancos_id);
-       $this->Token = GetTokenBradesco::create($this->parametros->id);
- 
+        $this->Token = GetTokenBradesco::create($this->parametros->id);
+
 
 
         $this->tipo = $request->tipo;
@@ -35,164 +35,156 @@ class CreateBoletoBradesco extends Controller
 
         $this->beneficiario = Beneficiario::find($this->titulos->beneficiario_id);
 
-       // $this->beneficiario = Beneficiario::where('id', $this->titulos->beneficiario_id)->pluck('id','nome',)->first();
+        // $this->beneficiario = Beneficiario::where('id', $this->titulos->beneficiario_id)->pluck('id','nome',)->first();
     }
 
     public function create()
     {
 
-return     $this->Token ;
+        $dados = new stdClass();
+        $dados->ctitloCobrCdent = 0;
+        $dados->registrarTitulo = 1;
+        $dados->nroCpfCnpjBenef = 68542653;
+        $dados->codUsuario = "APISERVIC";
+        $dados->filCpfCnpjBenef = "1018";
+        $dados->tipoAcesso = 2;
+        $dados->digCpfCnpjBenef = 38;
+        $dados->cpssoaJuridContr = "";
+        $dados->ctpoContrNegoc = "";
+        $dados->cidtfdProdCobr = 9;
+        $dados->nseqContrNegoc = "";
+        $dados->cnegocCobr = 111111111111111112;
+        $dados->filler = "";
+        $dados->eNseqContrNegoc = "";
+        $dados->tipoRegistro = 1;
+        $dados->codigoBanco = 237;
+        $dados->cprodtServcOper = "";
+        $dados->demisTitloCobr = "17.12.2024";
+        $dados->ctitloCliCdent = "TESTEBIA";
+        $dados->dvctoTitloCobr = "20.02.2025";
+        $dados->cidtfdTpoVcto = "";
+        $dados->vnmnalTitloCobr = 6000;
+        $dados->cindcdEconmMoeda = 9;
+        $dados->cespceTitloCobr = 2;
+        $dados->qmoedaNegocTitlo = 0;
+        $dados->ctpoProteTitlo = 0;
+        $dados->cindcdAceitSacdo = "N";
+        $dados->ctpoPrzProte = 0;
+        $dados->ctpoPrzDecurs = 0;
+        $dados->ctpoProteDecurs = 0;
+        $dados->cctrlPartcTitlo = 0;
+        $dados->cindcdPgtoParcial = "N";
+        $dados->cformaEmisPplta = "02";
+        $dados->qtdePgtoParcial = 0;
+        $dados->ptxJuroVcto = 0;
+        $dados->filler1 = "";
+        $dados->vdiaJuroMora = 0;
+        $dados->pmultaAplicVcto = 0;
+        $dados->qdiaInicJuro = 0;
+        $dados->vmultaAtrsoPgto = 0;
+        $dados->pdescBonifPgto01 = 0;
+        $dados->qdiaInicMulta = 0;
+        $dados->vdescBonifPgto01 = 0;
+        $dados->pdescBonifPgto02 = 0;
+        $dados->dlimDescBonif1 = "";
+        $dados->vdescBonifPgto02 = 0;
+        $dados->pdescBonifPgto03 = 0;
+        $dados->dlimDescBonif2 = "";
+        $dados->vdescBonifPgto03 = 0;
+        $dados->ctpoPrzCobr = 0;
+        $dados->dlimDescBonif3 = "";
+        $dados->pdescBonifPgto = 0;
+        $dados->dlimBonifPgto = "";
+        $dados->vdescBonifPgto = 0;
+        $dados->vabtmtTitloCobr = 0;
+        $dados->filler2 = "";
+        $dados->viofPgtoTitlo = 0;
+        $dados->isacdoTitloCobr = "TESTE EMPRESA PGIT";
+        $dados->enroLogdrSacdo = "TESTE";
+        $dados->elogdrSacdoTitlo = "TESTE";
+        $dados->ecomplLogdrSacdo = "TESTE";
+        $dados->ccepSacdoTitlo = 6332;
+        $dados->ebairoLogdrSacdo = "TESTE";
+        $dados->ccomplCepSacdo = 130;
+        $dados->imunSacdoTitlo = "TESTE";
+        $dados->indCpfCnpjSacdo = 1;
+        $dados->csglUfSacdo = "SP";
+        $dados->renderEletrSacdo = "";
+        $dados->cdddFoneSacdo = 0;
+        $dados->nroCpfCnpjSacdo = 38453450803;
+        $dados->bancoDeb = 0;
+        $dados->cfoneSacdoTitlo = 0;
+        $dados->agenciaDebDv = 0;
+        $dados->agenciaDeb = 0;
+        $dados->bancoCentProt = 0;
+        $dados->contaDeb = 0;
+        $dados->isacdrAvalsTitlo = "";
+        $dados->agenciaDvCentPr = 0;
+        $dados->enroLogdrSacdr = "0";
+        $dados->elogdrSacdrAvals = "";
+        $dados->ecomplLogdrSacdr = "";
+        $dados->ccomplCepSacdr = 0;
+        $dados->ebairoLogdrSacdr = "";
+        $dados->csglUfSacdr = "";
+        $dados->ccepSacdrTitlo = 0;
+        $dados->imunSacdrAvals = "";
+        $dados->indCpfCnpjSacdr = 0;
+        $dados->renderEletrSacdr = "";
+        $dados->nroCpfCnpjSacdr = 0;
+        $dados->cdddFoneSacdr = 0;
+        $dados->filler3 = "0";
+        $dados->cfoneSacdrTitlo = 0;
+        $dados->iconcPgtoSpi = "";
+        $dados->fase = "1";
+        $dados->cindcdCobrMisto = "S";
+        $dados->ialiasAdsaoCta = "";
+        $dados->ilinkGeracQrcd = "";
+        $dados->caliasAdsaoCta = "";
+        $dados->wqrcdPdraoMercd = "";
+        $dados->validadeAposVencimento = "";
+        $dados->filler4 = "";
+        $dados->idLoc = "";
 
-        // Dependendo do tipo, retorna o Token ou gera o boleto
-        if ($this->tipo == 1) {
-            return $this->Token;
-        } else {
 
-            return   $this->enviarBoletoParaBanco();
+
+        $certificadoPublico = storage_path('app/public/certificado/' .$this->parametros->id . '/compdados.homologacao.pem');
+        $chavePrivada        = storage_path('app/public/certificado/' .$this->parametros->id . '/compdados.homologacao.key.pem');
+
+        if (!file_exists($certificadoPublico) || !file_exists($chavePrivada)) {
+            return response()->json(['erro' => 'Certificados não encontrados'], 500);
         }
-    }
 
-    private function gerarBoleto($ultimoNumero)
-    {
-        $boletoObj = new stdClass();
+        $client_id     = $this->parametros->client_id;
+        $client_secret =$this->parametros->client_secret;
 
-        // Definindo os dados do título
-        $boletoObj->codigoBeneficiario = $this->parametros->ambiente == 1 ? $this->parametros->numerocontrato : 12345;
-        $boletoObj->dataVencimento = $this->titulos->data_vencimento;
-        $boletoObj->especieDocumento = 'DUPLICATA_MERCANTIL_INDICACAO';
-        $boletoObj->valor = number_format($this->titulos->valor, 2, '.', '');
+        // Converte o objeto para JSON
+        $json = json_encode($dados);
 
-        // Dados do pagador (caso esteja presente)
-        if ($this->titulos->pessoa) {
-            $boletoObj->pagador = $this->preencherDadosPagador($this->titulos->pessoa);
-        }
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://openapisandbox.prebanco.com.br/boleto-hibrido/cobranca-registro/v1/gerarBoleto',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_SSLCERT => $certificadoPublico,
+            CURLOPT_SSLKEY  => $chavePrivada,
+            CURLOPT_KEYPASSWD => $this->parametros->senha,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => $json,
+            CURLOPT_HTTPHEADER => array(
+                'Authorization: Bearer '.$this->Token,
+                'Content-Type: application/json'
+            ),
+        ));
 
-        // Definindo o tipo de cobrança e nosso número
-        $boletoObj->tipoCobranca = "HIBRIDO";
-        $boletoObj->nossoNumero = null;
-        $boletoObj->seuNumero = $ultimoNumero->numero ?? null;
+        $response = curl_exec($curl);
+        curl_close($curl);
 
-        // Definindo juros, multa e informativos
-        $boletoObj = $this->adicionarJurosMultaInformativos($boletoObj);
+ $response=json_decode($response);
 
-        return $boletoObj;
-    }
-
-    private function preencherDadosPagador($pessoa)
-    {
-        $pagador = new stdClass();
-        $pagador->cep = $pessoa->cep;
-        $pagador->cidade = $pessoa->cidade;
-        $pagador->documento = ClassGenerica::cleandoc($pessoa->documento);
-        $pagador->nome = ClassGenerica::limitarTexto($pessoa->nome, 40);
-        $pagador->tipoPessoa = ClassGenerica::tipodoc($pessoa->cpf_cnpj);
-        $pagador->endereco = ClassGenerica::limitarTexto($pessoa->rua, 34) . ' ' . ClassGenerica::limitarTexto($pessoa->numero, 5);
-        $pagador->uf = $pessoa->uf;
-
-        return $pagador;
-    }
-
-    private function adicionarJurosMultaInformativos($boletoObj)
-    {
-        if ($this->parametros->tipojurosmora == 0) {
-            unset($boletoObj->tipoJuros, $boletoObj->juros);
-        } else {
-            $boletoObj->tipoJuros = $this->parametros->tipojurosmora == 1 ? 'PERCENTUAL' : 'VALOR';
-            $boletoObj->juros = number_format($this->parametros->valorjurosmora, 2, '.', '');
-        }
-
-        if ($this->parametros->tipomulta == 1) {
-            $boletoObj->multa = $this->parametros->valormulta;
-        } else {
-            unset($boletoObj->multa);
-        }
-
-        $boletoObj->informativos = [
-            ClassGenerica::limitarTexto($this->parametros->mensagem_1, 80) ?? "",
-            ClassGenerica::limitarTexto($this->parametros->mensagem_2, 80) ?? "",
-            ClassGenerica::limitarTexto($this->parametros->mensagem_3, 80) ?? "---------------------",
-            ClassGenerica::limitarTexto($this->parametros->mensagem_4, 69) . ' ' . ClassGenerica::limitarTexto($this->titulos->numero_documento, 10) ?? "",
-        ];
-
-        return $boletoObj;
-    }
-
-    private function enviarBoletoParaBanco()
-    {
-        try {
-            $url = $this->parametros->ambiente == 1 ? $this->parametros->url_boleto_producao : $this->parametros->url2;
-            $xapikey = $this->parametros->ambiente == 1 ? $this->parametros->client_id_producao : $this->parametros->client_id;
-            $posto = $this->parametros->ambiente == 1 ? $this->parametros->posto : "03";
-            $cooperativa = $this->parametros->ambiente == 1 ? $this->parametros->cooperativa : '6789';
-
-            // Monta o objeto do boleto
-            $boletoObj = $this->gerarBoleto($this->meunumero);
-
-            // Configuração do cURL
-            $method = 'POST';
-            $headers = [
-                'x-api-key: ' . $xapikey,
-                'Authorization: Bearer ' . $this->Token,
-                'Content-Type: application/json',
-                'cooperativa: ' . $cooperativa,
-                'posto: ' . $posto,
-            ];
-
-            $payload = json_encode($boletoObj);
-            $curl = curl_init();
-            curl_setopt_array($curl, [
-                CURLOPT_URL => $url,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_CUSTOMREQUEST => $method,
-                CURLOPT_POSTFIELDS => $payload,
-                CURLOPT_HTTPHEADER => $headers,
-            ]);
-
-            $response = curl_exec($curl);
-            if ($response === false) {
-                $error = curl_error($curl);
-                curl_close($curl);
-                return "Erro na solicitação cURL: $error";
-            }
-
-            curl_close($curl);
-
-            // Decodifica a resposta do banco
-            $response = json_decode($response);
-
-            // Atualiza os dados no banco
-
-            ContasReceber::where('id', $this->titulos->id)->update([
-           'nossonumero'   => $response->nossoNumero,
-           'seunumero'   =>   $this->meunumero->numero,
-                'codigobarras'  => $response->codigoBarras,
-                'linhadigitavel' => $response->linhaDigitavel,
-                'beneficiario_id' =>  $this->beneficiario->id,
-                'qrCodePix' => $response->qrCode,
-                'qrCodeUrl' => $response->qrCode,
-                'status'   => 3,
-            ]);
-
-
-
-            ControleMeuNumeros::where('id', $this->meunumero->id)->update([
-                'status'  => 'uso',
-            ]);
-
-            return response()->json([
-                'Banco' =>$this->parametros->apelido,
-                'message' => 'Boleto gerado com sucesso!',
-                'Boleto' =>$this->meunumero->numero,
-                'Valor' =>$this->titulos->valor,
-                'Vencimento' =>$this->titulos->data_vencimento,
-              'Beneficiario' =>  $this->beneficiario->nome,
-             'Cliete' => $this->titulos->pessoa->nome,
-             'Docuemnto' => $this->titulos->pessoa->documento,
-                'data' =>  $response
-            ], 201);
-            
-        } catch (Exception $e) {
-            return 'Erro ao enviar o boleto: ' . $e->getMessage();
-        }
+ return $response;
     }
 }
