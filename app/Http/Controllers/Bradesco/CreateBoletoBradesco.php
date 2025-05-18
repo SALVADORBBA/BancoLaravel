@@ -26,7 +26,10 @@ class CreateBoletoBradesco extends Controller
         // Inicializando as variáveis necessárias
         $this->titulos = ContasReceber::find($request->id);
         $this->parametros = ParametroBanco::find($this->titulos->parametros_bancos_id);
-        $this->Token = CreateTokensSC::create($this->parametros);
+       $this->Token = GetTokenBradesco::create($this->parametros->id);
+ 
+
+
         $this->tipo = $request->tipo;
         $this->meunumero = ControleMeuNumeroController::create($this->parametros->id);
 
@@ -38,7 +41,7 @@ class CreateBoletoBradesco extends Controller
     public function create()
     {
 
-
+return     $this->Token ;
 
         // Dependendo do tipo, retorna o Token ou gera o boleto
         if ($this->tipo == 1) {

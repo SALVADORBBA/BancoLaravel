@@ -32,11 +32,8 @@ class GetTokenBradesco extends Controller
 
         // Verifica se o token ainda está válido
         if ($parametros->token && $parametros->data_token && strtotime($parametros->data_token) > time()) {
-            return response()->json([
-                'Origem' => 'Banco de Dados',
-                'access_token' => $parametros->token,
-                'expires_at' => $parametros->data_token
-            ]);
+            return    $parametros->token;
+              
         }
 
         $certificadoPublico = storage_path('app/public/certificado/' . $parametros->id . '/compdados.homologacao.pem');
@@ -96,10 +93,8 @@ class GetTokenBradesco extends Controller
         $parametros->data_token = now()->addSeconds($jsonResponse['expires_in'] ?? 300);
         $parametros->save();
 
-        return response()->json([
-            'Origem' => 'api',
-            'access_token' => $parametros->token,
-            'expires_at' => $parametros->data_token
-        ]);
+        return  $parametros->token;
+ 
+      
     }
 }
