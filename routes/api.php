@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BancoBrasil\BancoBrasilTokenService;
 use App\Http\Controllers\BoletosRest;
 use App\Http\Controllers\Bradesco\CreateBoletoBradesco;
 use App\Http\Controllers\Bradesco\GetTokenBradesco;
@@ -78,6 +79,10 @@ Route::post('/Sicredi/SolicitacaoBaixa', [BaixaBoletoSicredi::class, 'store']);
  
 Route::post('/Bradesco/Tokens', [GetTokenBradesco::class, 'create']);
 
-//////////Bradesco
+
  
 Route::post('/Bradesco/CreateBoleto', [CreateBoletoBradesco::class, 'create']);
+//////////Banco do Brasil
+
+ 
+Route::post('/BancoBrasil/Tokens', [BancoBrasilTokenService::class, 'create']);

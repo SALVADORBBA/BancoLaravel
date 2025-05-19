@@ -183,8 +183,8 @@ class CreateBoletoBradesco extends Controller
         $response = curl_exec($curl);
         curl_close($curl);
 
- $response=json_decode($response);
+       $response=json_decode($response);
 
- return $response;
+       return $response;
     }
 }
