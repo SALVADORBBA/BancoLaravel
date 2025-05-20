@@ -40,15 +40,20 @@ class CreateBoletoBradesco extends Controller
 
     public function create()
     {
-
         $dados = new stdClass();
+
+        // SEÇÃO: DADOS DE IDENTIFICAÇÃO DO BENEFICIÁRIO
+        // -----------------------------------------
+        $dados->nroCpfCnpjBenef = 68542653;
+        $dados->filCpfCnpjBenef = "1018";
+        $dados->digCpfCnpjBenef = 38;
+
+        // SEÇÃO: DADOS DE CONTROLE E ACESSO
+        // -----------------------------------------
         $dados->ctitloCobrCdent = 0;
         $dados->registrarTitulo = 1;
-        $dados->nroCpfCnpjBenef = 68542653;
         $dados->codUsuario = "APISERVIC";
-        $dados->filCpfCnpjBenef = "1018";
         $dados->tipoAcesso = 2;
-        $dados->digCpfCnpjBenef = 38;
         $dados->cpssoaJuridContr = "";
         $dados->ctpoContrNegoc = "";
         $dados->cidtfdProdCobr = 9;
@@ -56,6 +61,9 @@ class CreateBoletoBradesco extends Controller
         $dados->cnegocCobr = 111111111111111112;
         $dados->filler = "";
         $dados->eNseqContrNegoc = "";
+
+        // SEÇÃO: DADOS DO TÍTULO/BOLETO
+        // -----------------------------------------
         $dados->tipoRegistro = 1;
         $dados->codigoBanco = 237;
         $dados->cprodtServcOper = "";
@@ -67,15 +75,24 @@ class CreateBoletoBradesco extends Controller
         $dados->cindcdEconmMoeda = 9;
         $dados->cespceTitloCobr = 2;
         $dados->qmoedaNegocTitlo = 0;
+
+        // SEÇÃO: CONFIGURAÇÕES DE PROTESTO E ACEITE
+        // -----------------------------------------
         $dados->ctpoProteTitlo = 0;
         $dados->cindcdAceitSacdo = "N";
         $dados->ctpoPrzProte = 0;
         $dados->ctpoPrzDecurs = 0;
         $dados->ctpoProteDecurs = 0;
         $dados->cctrlPartcTitlo = 0;
+
+        // SEÇÃO: CONFIGURAÇÕES DE PAGAMENTO
+        // -----------------------------------------
         $dados->cindcdPgtoParcial = "N";
         $dados->cformaEmisPplta = "02";
         $dados->qtdePgtoParcial = 0;
+
+        // SEÇÃO: JUROS, MULTAS E DESCONTOS
+        // -----------------------------------------
         $dados->ptxJuroVcto = 0;
         $dados->filler1 = "";
         $dados->vdiaJuroMora = 0;
@@ -99,6 +116,9 @@ class CreateBoletoBradesco extends Controller
         $dados->vabtmtTitloCobr = 0;
         $dados->filler2 = "";
         $dados->viofPgtoTitlo = 0;
+
+        // SEÇÃO: DADOS DO SACADO (PAGADOR)
+        // -----------------------------------------
         $dados->isacdoTitloCobr = "TESTE EMPRESA PGIT";
         $dados->enroLogdrSacdo = "TESTE";
         $dados->elogdrSacdoTitlo = "TESTE";
@@ -112,12 +132,18 @@ class CreateBoletoBradesco extends Controller
         $dados->renderEletrSacdo = "";
         $dados->cdddFoneSacdo = 0;
         $dados->nroCpfCnpjSacdo = 38453450803;
-        $dados->bancoDeb = 0;
         $dados->cfoneSacdoTitlo = 0;
+
+        // SEÇÃO: DADOS BANCÁRIOS PARA DÉBITO
+        // -----------------------------------------
+        $dados->bancoDeb = 0;
         $dados->agenciaDebDv = 0;
         $dados->agenciaDeb = 0;
         $dados->bancoCentProt = 0;
         $dados->contaDeb = 0;
+
+        // SEÇÃO: DADOS DO SACADOR/AVALISTA
+        // -----------------------------------------
         $dados->isacdrAvalsTitlo = "";
         $dados->agenciaDvCentPr = 0;
         $dados->enroLogdrSacdr = "0";
@@ -134,6 +160,9 @@ class CreateBoletoBradesco extends Controller
         $dados->cdddFoneSacdr = 0;
         $dados->filler3 = "0";
         $dados->cfoneSacdrTitlo = 0;
+
+        // SEÇÃO: CONFIGURAÇÕES ADICIONAIS E PIX
+        // -----------------------------------------
         $dados->iconcPgtoSpi = "";
         $dados->fase = "1";
         $dados->cindcdCobrMisto = "S";
@@ -145,18 +174,20 @@ class CreateBoletoBradesco extends Controller
         $dados->filler4 = "";
         $dados->idLoc = "";
 
-
-
-        $certificadoPublico = storage_path('app/public/certificado/' .$this->parametros->id . '/compdados.homologacao.pem');
-        $chavePrivada        = storage_path('app/public/certificado/' .$this->parametros->id . '/compdados.homologacao.key.pem');
+        // SEÇÃO: CONFIGURAÇÃO DE CERTIFICADOS E AUTENTICAÇÃO
+        // -----------------------------------------
+        $certificadoPublico = storage_path('app/public/certificado/' . $this->parametros->id . '/compdados.homologacao.pem');
+        $chavePrivada        = storage_path('app/public/certificado/' . $this->parametros->id . '/compdados.homologacao.key.pem');
 
         if (!file_exists($certificadoPublico) || !file_exists($chavePrivada)) {
             return response()->json(['erro' => 'Certificados não encontrados'], 500);
         }
 
         $client_id     = $this->parametros->client_id;
-        $client_secret =$this->parametros->client_secret;
+        $client_secret = $this->parametros->client_secret;
 
+        // SEÇÃO: EXECUÇÃO DA REQUISIÇÃO
+        // -----------------------------------------
         // Converte o objeto para JSON
         $json = json_encode($dados);
 
@@ -175,7 +206,7 @@ class CreateBoletoBradesco extends Controller
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS => $json,
             CURLOPT_HTTPHEADER => array(
-                'Authorization: Bearer '.$this->Token,
+                'Authorization: Bearer ' . $this->Token,
                 'Content-Type: application/json'
             ),
         ));
@@ -183,8 +214,29 @@ class CreateBoletoBradesco extends Controller
         $response = curl_exec($curl);
         curl_close($curl);
 
-       $response=json_decode($response);
+        $response = json_decode($response);
 
-       return $response;
+      
+    // SEÇÃO: ATUALIZAÇÃO DOS DADOS DO BOLETO NO BANCO DE DADOS
+    // -----------------------------------------
+ 
+        // Extrair o nosso número da resposta do Bradesco
+        $nsuCode = $response->nsuCode ?? $this->meunumero ?? null;
+        
+      
+        ContasReceber::where('id', $this->titulos->id)->update([
+            'nossonumero'    => $response->cnegocCobr ?? $this->meunumero ?? null,
+            'codigobarras'   => $response->codBarras10 ?? null,
+            'linhadigitavel' => $response->linhaDig10 ?? null,
+ 
+            'covenantCode'   => $this->beneficiario->covenantCode ?? null,
+            'beneficiario_id'=> $this->beneficiario->id,
+            'qrCodePix'      => $response->wqrcdPdraoMercd ?? null,
+            'qrCodeUrl'      => $response->ilinkGeracQrcd ?? null,
+            'status'         => 3,
+        ]);
+  
+
+    return $response;
     }
 }
