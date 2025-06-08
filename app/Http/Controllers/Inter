@@ -1,0 +1,163 @@
+<?php
+
+/**
+ * Classe para geração de boletos utilizando a API do Banco Inter
+ *
+ * Esta classe é responsável por gerar boletos bancários através da API do Banco Inter,
+ * utilizando o token de acesso gerado pela classe GetTokenIter.
+ *
+ * @author    Rubens dos Santos <salvadorbba@gmail.com>
+ * @contact   71996758056
+ * @version   1.0
+ * @package   Integration
+ */class BoletoInter {
+    private $token;
+    private $cobranca;
+    private $parametros;
+    private $dados;
+    private $key;
+
+    /**
+     * Construtor da classe
+     * 
+     * @param int $key ID da cobrança (chave primária)
+     * @param object|null $dados Dados adicionais para uso interno (opcional)
+     */
+    public function __construct($key, $dados = null) {
+        $this->key = $key;
+        $this->dados = $dados;
+
+        $this->cobranca = Contasreceber::find($this->key);
+        if (!$this->cobranca) {
+            throw new Exception("Cobrança não encontrada.");
+        }
+
+        $this->parametros = ParametrosBancos::find(1);
+        if (!$this->parametros) {
+            throw new Exception("Parâmetros bancários não encontrados.");
+        }
+
+      
+    }
+
+    /**
+     * Prepara os dados do boleto
+     */
+  public function prepararDados() {
+    $fone_limpo = preg_replace('/\D/', '', $this->cobranca->pessoa->whatsapp);
+    $ddd = substr($fone_limpo, 0, 2);
+    $telefone = substr($fone_limpo, 2);
+
+    $cpf = preg_replace('/\D/', '', $this->cobranca->pessoa->documento);
+    $tp_cpf = strlen($cpf) <= 11 ? 'FISICA' : 'JURIDICA';
+
+    $rc_obs = 'rc_obs';
+    $linhas = wordwrap($rc_obs, 78, "\n", true);
+    $linhasArray = array_slice(explode("\n", $linhas), 0, 5);
+
+    return (object) [
+        "seuNumero" => (string) substr(date('dmY') . $this->parametros->id . $this->cobranca->id, 0, 14),
+        "valorNominal" => number_format((float)$this->cobranca->valor, 2, '.', ''),
+        "dataVencimento" => $this->cobranca->data_vencimento,
+        "numDiasAgenda" => 60,
+        "pagador" => [
+            "cpfCnpj" => $cpf,
+            "tipoPessoa" => $tp_cpf,
+            "nome" => $this->cobranca->pessoa->nome ?? '',
+            "endereco" => $this->cobranca->pessoa->rua ?? '',
+            "cidade" => $this->cobranca->pessoa->cidade ?? '',
+            "uf" => $this->cobranca->pessoa->uf ?? '',
+            "cep" => preg_replace('/\D/', '', $this->cobranca->pessoa->cep) ?? '00000000',
+            "email" => $this->cobranca->pessoa->email ?? '',
+            "ddd" => $ddd,
+            "telefone" => $telefone,
+            "numero" => $this->cobranca->pessoa->numero ?? '',
+            "complemento" => $this->cobranca->pessoa->complemento ?? '',
+            "bairro" => $this->cobranca->pessoa->bairro ?? '',
+        ],
+        "multa" => [
+            "taxa" => "1",
+            "codigo" => "PERCENTUAL"
+        ],
+        "mora" => [
+            "taxa" => "0.33",
+            "codigo" => "TAXAMENSAL"
+        ],
+        "desconto" => [
+            "codigo" => "PERCENTUALDATAINFORMADA",
+            "taxa" => 3,
+            "quantidadeDias" => 7,
+        ],
+        "formasRecebimento" => ["BOLETO", "PIX"],
+        "mensagem" => [
+            'linha1' => $linhasArray[0] ?? '. ',
+            'linha2' => $linhasArray[1] ?? '. ',
+            'linha3' => $linhasArray[2] ?? '. ',
+            'linha4' => $linhasArray[3] ?? '. ',
+            'linha5' => $linhasArray[4] ?? '. '
+        ],
+        "beneficiarioFinal" => [
+            "cpfCnpj" => preg_replace('/\D/', '',  $this->parametros->beneficiarios->documento ?? '00000000000'),
+            "tipoPessoa" => strlen(preg_replace('/\D/', '',   $this->parametros->beneficiarios->documento ?? '')) <= 11 ? 'FISICA' : 'JURIDICA',
+            "nome" =>  $this->parametros->beneficiarios->nome ?? 'Nome do beneficiário',
+            "endereco" => $this->parametros->beneficiarios->endereco ?? '',
+            "bairro" =>$this->parametros->beneficiarios->bairro ?? '',
+            "cidade" =>$this->parametros->beneficiarios->cidade ?? '',
+            "uf" =>$this->parametros->beneficiarios->estado ?? '',
+            "cep" => preg_replace('/\D/', '', $this->parametros->beneficiarios->cep ?? '00000000')
+        ]
+    ];
+}
+
+ 
+    /**
+     * Gera o boleto
+     */
+    public function gerar() {
+ 
+        $tokens = new GetTokenInter(1);
+        $tokenObj = $tokens->create();
+      
+   
+                            $dados = $this->prepararDados();
+ 
+ 
+            $auth = 'Authorization: Bearer ' . $tokenObj->token;
+            $cc = 'x-conta-corrente: 37298269';
+            $json = 'Content-Type: application/json';
+
+ 
+     
+            $curl = curl_init();
+            curl_setopt_array($curl, [
+            CURLOPT_URL =>  'https://cdpj-sandbox.partners.uatinter.co/cobranca/v3/cobrancas',
+            CURLOPT_POST => 1,
+            CURLOPT_SSLCERT => $this->parametros->certificado,
+            CURLOPT_SSLKEY =>  $this->parametros->certificadoPublico,
+            CURLOPT_POSTFIELDS => json_encode($dados),
+            CURLOPT_HTTPHEADER => [
+            "Authorization: Bearer " .$this->token,
+            "Content-Type: application/json",
+            "x-conta-corrente: $conta_bancaria"
+            ]
+
+            ]);
+
+
+        $result = curl_exec($curl);
+        $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+        
+
+            return   $result  ;
+
+
+
+
+
+
+ 
+ 
+ 
+    }
+}

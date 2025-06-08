@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\BancoBrasil\BancoBrasilTokenService;
+use App\Http\Controllers\BancoInter\CreateBoletoInter;
+use App\Http\Controllers\BancoInter\GetTokenIter;
 use App\Http\Controllers\BoletosRest;
 use App\Http\Controllers\Bradesco\CreateBoletoBradesco;
 use App\Http\Controllers\Bradesco\GetTokenBradesco;
@@ -26,6 +28,8 @@ use App\Http\Controllers\Sicredi\PrintBoleto;
  
 use App\Http\Controllers\WebhookController;
 
+use App\Http\Controllers\BancoInterBoletoController;
+ 
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -86,3 +90,12 @@ Route::post('/Bradesco/CreateBoleto', [CreateBoletoBradesco::class, 'create']);
 
  
 Route::post('/BancoBrasil/Tokens', [BancoBrasilTokenService::class, 'create']);
+
+//////////////// inter
+
+
+ 
+Route::post('/emitir', [CreateBoletoInter::class, 'generate']);
+Route::get('/consultar/{codigo}', [CreateBoletoInter::class, 'consultar']);
+Route::post('/cancelar/{codigo}', [CreateBoletoInter::class, 'cancelar']);
+Route::get('/baixar-pdf/{codigo}', [CreateBoletoInter::class, 'baixarPdf']);
