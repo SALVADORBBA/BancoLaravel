@@ -294,7 +294,18 @@ class CreateBoletoInter extends Controller
             $boletoData = $this->prepareBoletoData();
             $response = $this->sendBoletoRequest($boletoData, $token->token);
 
-            return response()->json($response);
+            // Atualiza a cobrança com os dados do boleto
+            $this->cobranca->nossoNumero = $response->nossoNumero ?? null;
+            $this->cobranca->linhaDigitavel = $response->linhaDigitavel ?? null;
+            $this->cobranca->codigoBarras = $response->codigoBarras ?? null;
+            $this->cobranca->save();
+
+            // Retorna a resposta da API junto com a cobrança atualizada
+            return response()->json([
+                'boleto' => $response,
+                'cobranca' => $this->cobranca
+            ]);
+            
         } catch (Exception $e) {
             Log::error('Erro ao gerar boleto: ' . $e->getMessage());
             return response()->json(['error' => $e->getMessage()], 500);
