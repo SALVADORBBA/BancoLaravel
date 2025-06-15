@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BancoBrasil\BancoBrasilTokenService;
+use App\Http\Controllers\BancoBrasil\WebhookBrasil;
 use App\Http\Controllers\BancoInter\CreateBoletoInter;
 use App\Http\Controllers\BancoInter\GetTokenIter;
 use App\Http\Controllers\BoletosRest;
@@ -90,6 +91,12 @@ Route::post('/Bradesco/CreateBoleto', [CreateBoletoBradesco::class, 'create']);
 
  
 Route::post('/BancoBrasil/Tokens', [BancoBrasilTokenService::class, 'create']);
+
+ 
+Route::post('/WebhookBrasil', [WebhookBrasil::class, 'store']);
+
+
+
 
 //////////////// inter/////
 
