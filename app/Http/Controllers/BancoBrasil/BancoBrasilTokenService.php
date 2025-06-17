@@ -17,9 +17,9 @@ class BancoBrasilTokenService
      *
      * @param string|int $key - Chave primária da tabela parametros_bancos
      */
-    public function __construct(Request $request)
+    public function __construct($key)
     {
-        $this->key =  $request->id;
+        $this->key =  $key;
         $this->parametros = ParametroBanco::find($this->key);
     }
 
