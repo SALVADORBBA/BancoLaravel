@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\BancoBrasil;
 
-use App\Http\Controllers\Controller;
+ 
 use Illuminate\Http\Request;
 use App\Models\ParametroBanco;
 use Illuminate\Support\Carbon;
